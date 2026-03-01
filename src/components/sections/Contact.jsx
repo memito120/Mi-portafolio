@@ -76,7 +76,7 @@ export function Contact() {
                 <Card className="hover:shadow-md transition-shadow group cursor-pointer">
                   <CardContent className="p-4">
                     <a 
-                      href="mailto:carlos.martinez@ejemplo.com"
+                      href="mailto:guilledelgaditob@gmail.com"
                       className="flex items-center gap-4"
                     >
                       <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -84,7 +84,7 @@ export function Contact() {
                       </div>
                       <div>
                         <h4 className="font-medium">Email</h4>
-                        <p className="text-sm text-muted-foreground">carlos.martinez@ejemplo.com</p>
+                        <p className="text-sm text-muted-foreground">guilledelgaditob@gmail.com</p>
                       </div>
                     </a>
                   </CardContent>
@@ -93,7 +93,7 @@ export function Contact() {
                 <Card className="hover:shadow-md transition-shadow group cursor-pointer">
                   <CardContent className="p-4">
                     <a 
-                      href="https://linkedin.com/in/usuario"
+                      href="https://linkedin.com/in/guillermo-delgado-b200363b4"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-4"
@@ -103,7 +103,7 @@ export function Contact() {
                       </div>
                       <div>
                         <h4 className="font-medium">LinkedIn</h4>
-                        <p className="text-sm text-muted-foreground">linkedin.com/in/usuario</p>
+                        <p className="text-sm text-muted-foreground">linkedin.com/in/guillermo-delgado-b200363b4</p>
                       </div>
                     </a>
                   </CardContent>
@@ -112,7 +112,7 @@ export function Contact() {
                 <Card className="hover:shadow-md transition-shadow group cursor-pointer">
                   <CardContent className="p-4">
                     <a 
-                      href="https://github.com/usuario"
+                      href="https://github.com/memito120"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-4"
@@ -122,7 +122,7 @@ export function Contact() {
                       </div>
                       <div>
                         <h4 className="font-medium">GitHub</h4>
-                        <p className="text-sm text-muted-foreground">github.com/usuario</p>
+                        <p className="text-sm text-muted-foreground">github.com/memito120</p>
                       </div>
                     </a>
                   </CardContent>

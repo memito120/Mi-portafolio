@@ -6,7 +6,7 @@ import { cn } from '../../lib/utils';
 export function DarkModeToggle({ isDarkMode, setIsDarkMode }) {
   return (
     <motion.div
-      className="fixed top-6 right-6 z-50"
+      className="fixed top-36 z-50 right-4"
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 20 }}
@@ -20,8 +20,7 @@ export function DarkModeToggle({ isDarkMode, setIsDarkMode }) {
           className="absolute -bottom-12 right-0 bg-primary text-primary-foreground px-3 py-1.5 rounded-md text-xs
                      whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
         >
-          ¡Prueba el modo {isDarkMode ? 'claro' : 'oscuro'}!
-          <div className="absolute top-0 right-4 -translate-y-1/2 w-2 h-2 bg-primary rotate-45"></div>
+          {isDarkMode ? 'Modo Oscuro' : 'Modo Claro'}
         </motion.div>
 
         {/* Partículas animadas */}

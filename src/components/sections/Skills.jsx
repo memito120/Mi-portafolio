@@ -8,17 +8,9 @@ const skillCategories = [
     title: "Frontend",
     icon: Code2,
     skills: [
-      "React", "TypeScript", "JavaScript (ES6+)", "Next.js", "Vue.js",
+      "React", "TypeScript (Aprendiendo)", "JavaScript (ES6+)", "Next.js", "Vue.js",
       "HTML5", "CSS3", "Sass/SCSS", "Tailwind CSS", "Material-UI",
-      "Styled Components", "Framer Motion", "Redux", "Zustand", "React Query"
-    ]
-  },
-  {
-    title: "Backend",
-    icon: Database,
-    skills: [
-      "Node.js", "Express", "RESTful APIs", "GraphQL",
-      "MongoDB", "PostgreSQL", "Firebase", "Supabase"
+      "Bootstrap", "Responsive Design", "Web Accessibility (a11y)"
     ]
   },
   {
@@ -26,17 +18,22 @@ const skillCategories = [
     icon: Wrench,
     skills: [
       "Git", "GitHub", "GitLab", "VS Code", "Webpack", "Vite",
-      "npm/yarn", "ESLint", "Prettier", "Jest", "Testing Library",
-      "Cypress", "Figma", "Adobe XD"
+      "npm/yarn","Figma", "Adobe XD"
+    ]
+  },
+  {
+    title: "Backend",
+    icon: Database,
+    skills: [
+      "PHP", "MongoDB", "SQL", "RESTful APIs"
     ]
   },
   {
     title: "Metodologías",
     icon: GitBranch,
     skills: [
-      "Agile/Scrum", "Code Review", "CI/CD", "Responsive Design",
-      "Accesibilidad (WCAG)", "SEO", "Performance Optimization",
-      "Atomic Design", "BEM", "Git Flow"
+      "Agile/Scrum", "Kanban", "TDD", "CI/CD", "Code Review", "Documentación técnica",
+    
     ]
   }
 ];

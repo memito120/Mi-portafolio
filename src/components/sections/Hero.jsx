@@ -44,6 +44,9 @@ export function Hero() {
 							<Button size="lg" variant="outline" onClick={() => scrollToSection('projects')}>
 								Ver Proyectos
 							</Button>
+							<Button size="lg" variant="outline" onClick={() => scrollToSection('services')}>
+								Ver Servicios
+							</Button>
 						</div>
 
 						<div className="flex items-center gap-3">
