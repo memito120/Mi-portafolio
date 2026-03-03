@@ -8,32 +8,30 @@ const skillCategories = [
     title: "Frontend",
     icon: Code2,
     skills: [
-      "React", "TypeScript (Aprendiendo)", "JavaScript (ES6+)", "Next.js", "Vue.js",
-      "HTML5", "CSS3", "Sass/SCSS", "Tailwind CSS", "Material-UI",
-      "Bootstrap", "Responsive Design", "Web Accessibility (a11y)"
+      "React","Vite","JavaScript" ,"TypeScript (Aprendiendo)","Next.js",
+      "HTML5", "CSS3", "Tailwind CSS", "Material-UI",
+      "Bootstrap", "Responsive Design", "Web accesibilidad"
     ]
   },
   {
     title: "Herramientas",
     icon: Wrench,
     skills: [
-      "Git", "GitHub", "GitLab", "VS Code", "Webpack", "Vite",
-      "npm/yarn","Figma", "Adobe XD"
+      "Git", "GitHub", "npm","Figma", "Copilot", "Agent Claude codes","Excel intermedio","Sqlite"
     ]
   },
   {
     title: "Backend",
     icon: Database,
     skills: [
-      "PHP", "MongoDB", "SQL", "RESTful APIs"
+      "PHP", "MongoDB", "MySQL", "RESTful APIs"
     ]
   },
   {
-    title: "Metodologías",
+    title: "Metodologías (Aprendiendo)",
     icon: GitBranch,
     skills: [
-      "Agile/Scrum", "Kanban", "TDD", "CI/CD", "Code Review", "Documentación técnica",
-    
+      "Agile/Scrum", "Kanban"
     ]
   }
 ];

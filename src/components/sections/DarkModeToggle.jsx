@@ -22,42 +22,6 @@ export function DarkModeToggle({ isDarkMode, setIsDarkMode }) {
         >
           {isDarkMode ? 'Modo Oscuro' : 'Modo Claro'}
         </motion.div>
-
-        {/* Partículas animadas */}
-        <motion.div
-          className="absolute inset-0 -z-10"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-primary rounded-full"
-              style={{
-                top: '50%',
-                left: '50%',
-                rotate: `${i * 45}deg`,
-              }}
-              animate={{
-                x: [0, 25, 0],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: i * 0.2,
-              }}
-            />
-          ))}
-        </motion.div>
-
         {/* Botón principal */}
         <Button
           size="icon"
@@ -90,21 +54,6 @@ export function DarkModeToggle({ isDarkMode, setIsDarkMode }) {
             transition={{ duration: 0.5 }}
           />
         </Button>
-
-        {/* Icono de chispas flotante */}
-        <motion.div
-          className="absolute -top-2 -right-2"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 15, -15, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-          }}
-        >
-          <Sparkles className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-        </motion.div>
       </div>
     </motion.div>
   );

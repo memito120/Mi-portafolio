@@ -37,10 +37,12 @@ export function Hero() {
 						</p>
 
 						<div className="flex flex-wrap gap-3 mb-6">
-							<Button size="lg" onClick={() => scrollToSection('contact')}>
-								<Mail className="h-4 w-4" />
-								Contactar
-							</Button>
+							<a href="/CV_Guillermo_Delgado.pdf" download className="inline-block">
+								<Button size="lg">
+									<Mail className="h-4 w-4" />
+									Descargar CV
+								</Button>
+							</a>
 							<Button size="lg" variant="outline" onClick={() => scrollToSection('projects')}>
 								Ver Proyectos
 							</Button>
@@ -51,7 +53,7 @@ export function Hero() {
 
 						<div className="flex items-center gap-3">
 							<a
-								href="https://github.com/usuario"
+								href="https://github.com/memito120"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input hover:bg-accent hover:text-accent-foreground transition-colors"
@@ -60,7 +62,7 @@ export function Hero() {
 								<Github className="h-5 w-5" />
 							</a>
 							<a
-								href="https://linkedin.com/in/usuario"
+								href="https://linkedin.com/in/guillermo-delgado-b200363b4"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input hover:bg-accent hover:text-accent-foreground transition-colors"
@@ -80,7 +82,7 @@ export function Hero() {
 						<div className="w-[280px] sm:w-[340px] md:w-[380px] rounded-3xl border bg-card/70 backdrop-blur p-4 shadow-xl">
 							<div className="relative rounded-2xl overflow-hidden bg-muted aspect-[4/5]">
 								<img
-									src="/perfil.jpg"
+									src="/user.jpg"
 									alt="Imagen de perfil de Guillermo Delgado"
 									className="w-full h-full object-cover"
 								/>

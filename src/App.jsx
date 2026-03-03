@@ -25,15 +25,10 @@ function App() {
       <Hero />
       <About />
       <Projects />
-
-      {/* Nueva sección de servicios */}
       <Services />
-
       <Skills />
       <Experience />
       <Contact />
-      
-      {/* Footer */}
       <Footer />
     </div>
   );
