@@ -9,26 +9,26 @@ export const projects = [
     title: "Plataforma web de escuela (Proyecto practica profesional)",
     description: "Desarrollo de una plataforma web para un colegio, con funcionalidades de gestión académica, comunicación y recursos para estudiantes y profesores.",
     technologies: ["PHP puro", "MySQL", "Bootstrap", "JavaScript", "HTML", "CSS"],
-    
-    githubUrl: "https://github.com/usuario/ecommerce",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80"
+    demoUrl: "",
+    githubUrl: "https://github.com/memito120/ProyectoWEB_1",
+    image: "/proyecto-1.png"
   },
   {
     id: 2,
     title: "Gestion de un gimnasio (Proyecto grupal)",
     description: "Aplicación de gestión de un gimnasio con funcionalidades de arrastrar y soltar, categorización y colaboración en tiempo real.",
     technologies: ["React", "JavaScript", "Node.js", "MySQL"],
-    demoUrl: "https://ejemplo-tasks.com",
-    githubUrl: "https://github.com/usuario/task-app",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+    demoUrl: "",
+    githubUrl: "",
+    image: "/proyecto-2.png"
   },
   {
     id: 3,
-    title: "Plataforma inmobiliaria (Proyecto personal)",
+    title: "Plataforma inmobiliaria (Proyecto prueba final de carrera)",
     description: "Desarrollo de una plataforma inmobiliaria con funcionalidades de búsqueda avanzada, filtros dinámicos y gestión de propiedades.",
     technologies: ["PHP", "MySQL", "Bootstrap", "JavaScript", "HTML", "CSS"],
-    githubUrl: "https://github.com/usuario/weather-app",
-    image: "https://images.unsplash.com/photo-1561484930-998b6a7b22e8?w=800&q=80"
+    githubUrl: "",
+    image: "/proyecto-3.png"
   },
 ];
 
@@ -39,7 +39,7 @@ export const services = [
     title: "Mantenimiento básico / limpieza interna",
     description: "Limpieza interna del equipo para mejorar temperatura, rendimiento y vida útil de los componentes.",
     tags: ["Limpieza", "Prevención", "PC/Notebook"],
-    priceRange: "$19.000 – $45.000 CLP",
+    priceRange: "$15.000 – $45.000 CLP",
     note: "Según si incluye solo limpieza o cambio de pasta térmica + diagnóstico completo.",
     image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80"
   },
@@ -73,7 +73,7 @@ export const services = [
   {
     id: 5,
     title: "Servicio técnico a domicilio",
-    description: "Atención en domicilio para soporte técnico, reparaciones y mantenciones según complejidad.",
+    description: "Atención en domicilio para soporte técnico, reparaciones basicos y mantenciones según complejidad.",
     tags: ["A domicilio", "Soporte técnico", "Comodidad"],
     priceRange: "$30.000 – $60.000 CLP",
     note: "Valor varía según complejidad del trabajo y desplazamiento.",

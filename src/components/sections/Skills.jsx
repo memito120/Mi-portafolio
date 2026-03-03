@@ -1,5 +1,25 @@
 import { motion } from 'framer-motion';
-import { Code2, Database, Wrench, GitBranch } from 'lucide-react';
+import {
+  Code2,
+  Database,
+  Wrench,
+  GitBranch,
+  Atom,
+  FileCode2,
+  Palette,
+  Wind,
+  Sparkles,
+  Github,
+  Package,
+  PenTool,
+  Bot,
+  FileSpreadsheet,
+  Server,
+  Braces,
+  Globe,
+  Boxes,
+  Circle
+} from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 
@@ -8,35 +28,58 @@ const skillCategories = [
     title: "Frontend",
     icon: Code2,
     skills: [
-      "React", "TypeScript (Aprendiendo)", "JavaScript (ES6+)", "Next.js", "Vue.js",
-      "HTML5", "CSS3", "Sass/SCSS", "Tailwind CSS", "Material-UI",
-      "Bootstrap", "Responsive Design", "Web Accessibility (a11y)"
+      "React+Vite","JavaScript","TypeScript (Aprendiendo)",
+      "HTML", "CSS", "Tailwind CSS", "Framer Motion"
     ]
   },
   {
     title: "Herramientas",
     icon: Wrench,
     skills: [
-      "Git", "GitHub", "GitLab", "VS Code", "Webpack", "Vite",
-      "npm/yarn","Figma", "Adobe XD"
+      "Git", "GitHub", "npm","Figma", "Copilot","Excel intermedio","Sqlite"
     ]
   },
   {
     title: "Backend",
     icon: Database,
     skills: [
-      "PHP", "MongoDB", "SQL", "RESTful APIs"
+      "PHP", "MongoDB", "MySQL", "RESTful APIs", "Node.js (Aprendiendo)", "Next.js (Aprendiendo)"
     ]
   },
   {
-    title: "Metodologías",
+    title: "Metodologías (Aprendiendo)",
     icon: GitBranch,
     skills: [
-      "Agile/Scrum", "Kanban", "TDD", "CI/CD", "Code Review", "Documentación técnica",
-    
+      "Agile/Scrum", "Kanban"
     ]
   }
 ];
+/*Funcion para asignar iconos a las habilidades según su nombre, mejorando la visualización de las mismas en la sección de habilidades del portafolio. 
+Se basa en palabras clave dentro del nombre de la habilidad para determinar el icono más representativo. 
+Si no se encuentra una coincidencia específica, se asigna un icono genérico. 
+Esto ayuda a los visitantes a identificar rápidamente las tecnologías y herramientas*/
+function getSkillIcon(skill) {
+  const label = skill.toLowerCase();
+
+  if (label.includes('react')) return Atom;
+  if (label.includes('javascript') || label.includes('typescript')) return FileCode2;
+  if (label.includes('html') || label.includes('css')) return Palette;
+  if (label.includes('tailwind')) return Wind;
+  if (label.includes('framer')) return Sparkles;
+  if (label.includes('git') || label.includes('github')) return Github;
+  if (label.includes('npm')) return Package;
+  if (label.includes('figma')) return PenTool;
+  if (label.includes('copilot')) return Bot;
+  if (label.includes('excel')) return FileSpreadsheet;
+  if (label.includes('sqlite') || label.includes('mysql') || label.includes('mongodb')) return Database;
+  if (label.includes('php') || label.includes('node')) return Server;
+  if (label.includes('api')) return Braces;
+  if (label.includes('next.js')) return Boxes;
+  if (label.includes('agile') || label.includes('kanban')) return GitBranch;
+  if (label.includes('web')) return Globe;
+
+  return Circle;
+}
 
 export function Skills() {
   return (
@@ -78,7 +121,10 @@ export function Skills() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
-                      {category.skills.map((skill, skillIndex) => (
+                      {category.skills.map((skill, skillIndex) => {
+                        const SkillIcon = getSkillIcon(skill);
+
+                        return (
                         <motion.div
                           key={skill}
                           initial={{ opacity: 0, scale: 0.8 }}
@@ -88,12 +134,14 @@ export function Skills() {
                         >
                           <Badge 
                             variant="secondary"
-                            className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                            className="inline-flex items-center gap-1.5 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
                           >
+                            <SkillIcon className="h-3.5 w-3.5" />
                             {skill}
                           </Badge>
                         </motion.div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </CardContent>
                 </Card>

@@ -61,9 +61,7 @@ export function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              Soy un analista programador con 1 años de experiencia creando aplicaciones
-              web modernas y escalables. Mi pasión es transformar diseños en experiencias digitales
-              intuitivas y faciles de usar.
+              Soy un analista programador con 1 año de experiencia en la creación de aplicaciones modernas y escalables. Me apasiona transformar ideas en experiencias digitales intuitivas.
             </motion.p>
             <motion.p
               className="text-lg text-muted-foreground mb-6"
@@ -72,9 +70,7 @@ export function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              Me especializo en React, TypeScript y el ecosistema moderno de JavaScript, siempre
-              buscando las mejores prácticas y las últimas tecnologías para crear soluciones
-              innovadoras que superen las expectativas.
+              Especializo en React y el ecosistema moderno de JavaScript, siempre busco implementar las mejores prácticas y tecnologías innovadoras.
             </motion.p>
             <motion.p
               className="text-lg text-muted-foreground"
@@ -83,9 +79,7 @@ export function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              Cuando no estoy programando, me gusta contribuir a proyectos de código abierto,
-              escribir artículos técnicos y mantenerme actualizado con las últimas tendencias
-              en desarrollo web.
+              Fuera del código, disfruto aprender nuevas herramientas, explorar metodologías ágiles y mejorar mis habilidades continuamente.
             </motion.p>
           </div>
 
