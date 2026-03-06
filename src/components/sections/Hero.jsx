@@ -1,14 +1,18 @@
 import { motion } from 'framer-motion';
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Briefcase, HandMetal } from 'lucide-react';
 import { Button } from '../ui/button';
+import { Badge } from '../ui/badge';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 export function Hero() {
+	const { isDarkMode } = useDarkMode();
+
 	const scrollToSection = (id) => {
 		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 	};
 
 	return (
-		<section id="home" className="min-h-screen flex items-center relative overflow-hidden">
+		<section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-10 md:pt-16">
 			<div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background -z-10" />
 
 			<div className="container mx-auto px-4 py-24">
@@ -24,9 +28,30 @@ export function Hero() {
 							Guillermo Delgado
 						</h1>
 
-						<h2 className="text-2xl md:text-3xl font-semibold mb-6 text-foreground/80">
+						<h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground/80">
 							Analista Programador
 						</h2>
+
+						{/* Badge inclusiva con implante coclear y LSCH */}
+						<motion.div
+							initial={{ opacity: 0, y: 10 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ delay: 0.3, duration: 0.5 }}
+							className="flex flex-wrap items-center gap-2 mb-6"
+						>
+							<Badge variant="secondary" className="text-sm px-3 py-1.5 flex items-center gap-2 bg-primary/10 hover:bg-primary/20 transition-colors">
+								<img
+									src={isDarkMode ? '/coclear-dark.svg' : '/coclear-normal.svg'}
+									alt="Implante coclear"
+									className="w-10"
+								/>
+								<span className="font-medium">Persona Sorda / Usuario de Implante Coclear</span>
+							</Badge>
+							<Badge variant="outline" className="text-sm px-3 py-1.5 flex items-center gap-2 border-primary/40">
+								<HandMetal className="w-10" />
+								<span className="font-medium">LSCH Nativa</span>
+							</Badge>
+						</motion.div>
 
 						<p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl">
 							Especializado en crear experiencias web modernas, accesibles y fáciles de usar,
@@ -37,17 +62,14 @@ export function Hero() {
 						</p>
 
 						<div className="flex flex-wrap gap-3 mb-6">
-							<a href="/CV_Guillermo_Delgado.pdf" download className="inline-block">
-								<Button size="lg">
-									<Mail className="h-4 w-4" />
-									Descargar CV
+							<a className="inline-block">
+								<Button size="lg" onClick={() => scrollToSection('services')}>
+									<Briefcase className="h-4 w-4"/>
+									Ver Servicios
 								</Button>
 							</a>
 							<Button size="lg" variant="outline" onClick={() => scrollToSection('projects')}>
 								Ver Proyectos
-							</Button>
-							<Button size="lg" variant="outline" onClick={() => scrollToSection('services')}>
-								Ver Servicios
 							</Button>
 						</div>
 
@@ -82,7 +104,7 @@ export function Hero() {
 						<div className="w-[280px] sm:w-[340px] md:w-[380px] rounded-3xl border bg-card/70 backdrop-blur p-4 shadow-xl">
 							<div className="relative rounded-2xl overflow-hidden bg-muted aspect-[4/5]">
 								<img
-									src="/user.jpg"
+									src="/user.jpeg"
 									alt="Imagen de perfil de Guillermo Delgado"
 									className="w-full h-full object-cover"
 								/>

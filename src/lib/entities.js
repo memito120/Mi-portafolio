@@ -10,7 +10,7 @@ export const projects = [
     description: "Desarrollo de una plataforma web para un colegio, con funcionalidades de gestión académica, comunicación y recursos para estudiantes y profesores.",
     technologies: ["PHP puro", "MySQL", "Bootstrap", "JavaScript", "HTML", "CSS"],
     demoUrl: "",
-    githubUrl: "https://github.com/memito120/ProyectoWEB_1",
+    githubUrl: "",
     image: "/proyecto-1.png"
   },
   {
@@ -36,49 +36,77 @@ export const projects = [
 export const services = [
   {
     id: 1,
-    title: "Mantenimiento básico / limpieza interna",
-    description: "Limpieza interna del equipo para mejorar temperatura, rendimiento y vida útil de los componentes.",
-    tags: ["Limpieza", "Prevención", "PC/Notebook"],
-    priceRange: "$15.000 – $45.000 CLP",
-    note: "Según si incluye solo limpieza o cambio de pasta térmica + diagnóstico completo.",
-    image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80"
-  },
-  {
-    id: 2,
-    title: "Mantenimiento preventivo + pasta térmica",
-    description: "Servicio preventivo completo con limpieza, revisión general y aplicación de pasta térmica.",
-    tags: ["Pasta térmica", "Temperaturas", "Rendimiento"],
-    priceRange: "$30.000 – $60.000 CLP",
-    note: "Ideal para equipos con altas temperaturas o uso intensivo.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80"
+    title: "Servicio técnico a domicilio",
+    subtitle: "Atención personalizada en tu hogar o tu lugar de trabajo",
+    description: "Atención en domicilio para soporte técnico, reparaciones básicas y mantenciones según complejidad. Incluye desplazamiento y asesoría técnica personalizada.",
+    tags: ["A domicilio", "Soporte técnico", "Comodidad", "Descuento por volumen"],
+    price: 35000,
+    priceRange: "$15.000 – $50.000 CLP por equipo",
+    duration: "Variable según servicio",
+    note: "Precio por computador. Descuento disponible para 5+ equipos. Desplazamiento puede aplicar según zona.",
+    images: ["/servicio-5.webp", "/servicio-7.jpg", "/servicio-10.jpg"]
   },
   {
     id: 3,
-    title: "Formateo / instalación de sistema operativo",
-    description: "Instalación de sistema operativo, configuración de software base y drivers esenciales.",
-    tags: ["Windows", "Drivers", "Optimización"],
-    priceRange: "$20.000 – $40.000 CLP",
-    note: "Incluye instalación de software base según necesidad del cliente.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80"
+    title: "Mantenimiento básico / limpieza interna",
+    subtitle: "Limpieza profesional de componentes",
+    description: "Limpieza interna del equipo para mejorar temperatura, rendimiento y vida útil de los componentes.",
+    tags: ["Limpieza", "Prevención", "PC/Notebook", "PS4-5/XBOX"],
+    price: 30000,
+    priceRange: "$15.000 – $45.000 CLP",
+    duration: "1-2 horas",
+    note: "Según si incluye solo limpieza o cambio de pasta térmica + diagnóstico completo.",
+    images: ["/servicio-1.webp", "/servicio-14.jpg", "/servicio-15.jpg"]
   },
   {
     id: 4,
-    title: "Diagnóstico básico",
-    description: "Evaluación inicial para detectar fallas de hardware o software y proponer solución.",
-    tags: ["Revisión", "Fallas", "Presupuesto"],
-    priceRange: "Desde $10.000 CLP",
-    note: "Costo inicial de diagnóstico, sujeto a reparación posterior.",
-    image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=800&q=80"
+    title: "Mantenimiento preventivo + pasta térmica",
+    subtitle: "Optimización térmica completa",
+    description: "Servicio preventivo completo con limpieza, revisión general y aplicación de pasta térmica.",
+    tags: ["Pasta térmica", "Temperaturas", "Rendimiento", "PC/Notebook", "PS4-5/XBOX"],
+    price: 45000,
+    priceRange: "$30.000 – $60.000 CLP",
+    duration: "2-3 horas",
+    note: "Ideal para equipos con altas temperaturas o uso intensivo.",
+    images: ["/servicio-2.jpg", "/servicio-5.jpg", "/servicio-11.jpg"]
   },
   {
     id: 5,
-    title: "Servicio técnico a domicilio",
-    description: "Atención en domicilio para soporte técnico, reparaciones basicos y mantenciones según complejidad.",
-    tags: ["A domicilio", "Soporte técnico", "Comodidad"],
-    priceRange: "$30.000 – $60.000 CLP",
-    note: "Valor varía según complejidad del trabajo y desplazamiento.",
-    image: "https://images.unsplash.com/photo-1593642532871-8b12e02d091c?w=800&q=80"
+    title: "Formateo / instalación de sistema operativo",
+    subtitle: "Instalación y configuración de Windows",
+    description: "Instalación de sistema operativo, configuración de software base y drivers esenciales.",
+    tags: ["Windows", "Drivers", "Optimización"],
+    price: 30000,
+    priceRange: "$20.000 – $40.000 CLP",
+    duration: "2-4 horas",
+    note: "Incluye instalación de software base según necesidad del cliente.",
+    images: ["/servicio-3.webp", "/servicio-12.jpg", "/servicio-16.jpg"]
+  },
+  {
+    id: 2,
+    title: "Diagnóstico básico",
+    subtitle: "Evaluación técnica completa",
+    description: "Evaluación inicial para detectar fallas de hardware o software y proponer solución.",
+    tags: ["Revisión", "Fallas", "Presupuesto"],
+    price: 10000,
+    priceRange: "Desde $10.000 CLP",
+    duration: "15-60 min",
+    note: "Costo inicial de diagnóstico, sujeto a reparación posterior.",
+    images: ["/servicio-4.webp", "/servicio-13.jpg"]
+  },
+  {
+    id: 6,
+    title: "Reparación de hardware (Proximamente)",
+    subtitle: "Reparación y reemplazo de componentes",
+    description: "Reparación de hardware con diagnóstico, presupuesto y reparación de componentes según disponibilidad.",
+    tags: ["Proximamente","Finales de 2026"],
+    price: "~",
+    priceRange: "Próximamente",
+    duration: "Variable según reparación",
+    note: "Servicio en desarrollo, disponible a finales de 2026.",
+    images: ["/servicio-17.jpg"]
   }
+
 ];
 
 

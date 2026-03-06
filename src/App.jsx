@@ -16,20 +16,21 @@ function App() {
 
   return (
     <div className="min-h-screen">
+      {/* Menu de secciones */}
       <Navbar />
 
       {/* Botón de modo oscuro flotante */}
-      <DarkModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <DarkModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
       
       {/* Secciones principales */}
-      <Hero />
-      <About />
-      <Projects />
-      <Services />
-      <Skills />
-      <Experience />
-      <Contact />
-      <Footer />
+      <Hero/>
+      <About/>
+      <Projects/>
+      <Services/>
+      <Skills/>
+      <Experience/>
+      <Contact/>
+      <Footer/>
     </div>
   );
 }

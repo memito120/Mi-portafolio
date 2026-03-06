@@ -1,22 +1,23 @@
 import { motion } from 'framer-motion';
-import { Code2, Lightbulb, Target, Users, Zap, Heart } from 'lucide-react';
+import { Code2, Lightbulb, Target, Zap, Pencil, Accessibility } from 'lucide-react';
 import { Card, CardContent } from '../ui/card';
 
 const values = [
   {
+    icon: Accessibility,
+    title: "Accesibilidad e Inclusión",
+    description: "Como persona sorda con implante coclear y usuario de LSCH nativa, me comprometo a crear experiencias digitales accesibles para todos, sin barreras.",
+    highlighted: true
+  },
+  {
     icon: Code2,
-    title: "Código Limpio",
-    description: "Escribo código mantenible, legible y siguiendo las mejores prácticas de la industria."
+    title: "Código rápido y legible",
+    description: "Me esfuerzo por escribir código limpio, eficiente y fácil de mantener, siguiendo las mejores prácticas de la industria."
   },
   {
     icon: Zap,
     title: "Rendimiento",
     description: "Optimizo cada aspecto para garantizar experiencias web rápidas y fluidas."
-  },
-  {
-    icon: Users,
-    title: "Colaboración",
-    description: "Trabajo efectivamente en equipo, compartiendo conocimientos y aprendiendo de otros."
   },
   {
     icon: Lightbulb,
@@ -29,10 +30,11 @@ const values = [
     description: "Me concentro en entregar soluciones que cumplan los objetivos del negocio y del usuario."
   },
   {
-    icon: Heart,
-    title: "Pasión",
-    description: "Me apasiona el desarrollo web y aprender continuamente nuevas habilidades."
-  }
+    icon: Pencil,
+    title: "Aprendizaje Continuo",
+    description: "Sigo aprendiendo y mejorando mis habilidades para ofrecer lo mejor en cada proyecto."
+  },
+
 ];
 
 export function About() {
@@ -97,10 +99,16 @@ export function About() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="h-full hover:shadow-lg transition-shadow duration-300 group">
+                  <Card className={`h-full hover:shadow-lg transition-shadow duration-300 group ${
+                    value.highlighted ? 'ring-2 ring-primary/50 bg-primary/5' : ''
+                  }`}>
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <div className={`p-3 rounded-lg transition-colors ${
+                          value.highlighted
+                            ? 'bg-primary text-primary-foreground'
+                            : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground'
+                        }`}>
                           <value.icon className="h-6 w-6" />
                         </div>
                         <div className="flex-1">

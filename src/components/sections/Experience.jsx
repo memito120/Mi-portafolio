@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Briefcase } from 'lucide-react';
+import { Calendar, Briefcase } from 'lucide-react';
 import { useEntity } from '../../lib/entities';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { Skeleton } from '../ui/skeleton';

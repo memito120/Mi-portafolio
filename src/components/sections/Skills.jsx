@@ -28,15 +28,15 @@ const skillCategories = [
     title: "Frontend",
     icon: Code2,
     skills: [
-      "React+Vite","JavaScript","TypeScript (Aprendiendo)",
-      "HTML", "CSS", "Tailwind CSS", "Framer Motion"
+      "React+Vite", "JavaScript", "TypeScript (Aprendiendo)",
+      "HTML", "CSS", "Tailwind CSS", "Bootstrap", "Framer Motion"
     ]
   },
   {
     title: "Herramientas",
     icon: Wrench,
     skills: [
-      "Git", "GitHub", "npm","Figma", "Copilot","Excel intermedio","Sqlite"
+      "Office", "GitHub", "npm", "Figma", "Copilot", "Excel intermedio", "Sqlite"
     ]
   },
   {
@@ -61,10 +61,12 @@ Esto ayuda a los visitantes a identificar rápidamente las tecnologías y herram
 function getSkillIcon(skill) {
   const label = skill.toLowerCase();
 
+  if (label.includes('office')) return FileSpreadsheet;
   if (label.includes('react')) return Atom;
   if (label.includes('javascript') || label.includes('typescript')) return FileCode2;
   if (label.includes('html') || label.includes('css')) return Palette;
   if (label.includes('tailwind')) return Wind;
+  if (label.includes('bootstrap')) return Palette;
   if (label.includes('framer')) return Sparkles;
   if (label.includes('git') || label.includes('github')) return Github;
   if (label.includes('npm')) return Package;
@@ -125,21 +127,21 @@ export function Skills() {
                         const SkillIcon = getSkillIcon(skill);
 
                         return (
-                        <motion.div
-                          key={skill}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: (index * 0.1) + (skillIndex * 0.02) }}
-                        >
-                          <Badge 
-                            variant="secondary"
-                            className="inline-flex items-center gap-1.5 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                          <motion.div
+                            key={skill}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: (index * 0.1) + (skillIndex * 0.02) }}
                           >
-                            <SkillIcon className="h-3.5 w-3.5" />
-                            {skill}
-                          </Badge>
-                        </motion.div>
+                            <Badge
+                              variant="secondary"
+                              className="inline-flex items-center gap-1.5 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                            >
+                              <SkillIcon className="h-3.5 w-3.5" />
+                              {skill}
+                            </Badge>
+                          </motion.div>
                         );
                       })}
                     </div>
