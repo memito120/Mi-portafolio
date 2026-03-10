@@ -1,41 +1,11 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { Mail, Linkedin, Github, Send } from 'lucide-react';
-import { Button } from '../ui/button';
+import { Mail, Linkedin, Github, Send ,Instagram,MessageCircle } from 'lucide-react';
+import { Card, CardContent } from '../ui/card';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
+import { Button } from '../ui/button';
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    // Simular envío de formulario
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Limpiar mensaje de éxito después de 5 segundos
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
-  };
-
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -54,35 +24,35 @@ export function Contact() {
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
             {/* Información de contacto */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="space-y-6"
+              className="flex flex-col items-center space-y-6 text-center"
             >
               <div>
                 <h3 className="text-2xl font-semibold mb-4">Contáctame directamente</h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-muted-foreground mb-6 max-w-lg">
                   Estoy siempre abierto a discutir nuevos proyectos, ideas creativas
                   u oportunidades de colaboración. No dudes en ponerte en contacto.
                 </p>
               </div>
 
-              {/* Enlaces directos */}
-              <div className="space-y-4">
-                <Card className="hover:shadow-md transition-shadow group cursor-pointer">
+              {/* Enlaces directos (cards centrados) */}
+              <div className="space-y-3 flex flex-col items-center w-full">
+                <Card className="w-full max-w-md hover:shadow-md transition-shadow group cursor-pointer">
                   <CardContent className="p-4">
-                    <a 
+                    <a
                       href="mailto:guilledelgaditob@gmail.com"
                       className="flex items-center gap-4"
                     >
                       <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                         <Mail className="h-5 w-5" />
                       </div>
-                      <div>
+                      <div className="text-left">
                         <h4 className="font-medium">Email</h4>
                         <p className="text-sm text-muted-foreground">guilledelgaditob@gmail.com</p>
                       </div>
@@ -90,9 +60,9 @@ export function Contact() {
                   </CardContent>
                 </Card>
 
-                <Card className="hover:shadow-md transition-shadow group cursor-pointer">
+                <Card className="w-full max-w-md hover:shadow-md transition-shadow group cursor-pointer">
                   <CardContent className="p-4">
-                    <a 
+                    <a
                       href="https://linkedin.com/in/guillermo-delgado-b200363b4"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -101,7 +71,7 @@ export function Contact() {
                       <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                         <Linkedin className="h-5 w-5" />
                       </div>
-                      <div>
+                      <div className="text-left">
                         <h4 className="font-medium">LinkedIn</h4>
                         <p className="text-sm text-muted-foreground">linkedin.com/in/guillermo-delgado-b200363b4</p>
                       </div>
@@ -109,9 +79,9 @@ export function Contact() {
                   </CardContent>
                 </Card>
 
-                <Card className="hover:shadow-md transition-shadow group cursor-pointer">
+                <Card className="w-full max-w-md hover:shadow-md transition-shadow group cursor-pointer">
                   <CardContent className="p-4">
-                    <a 
+                    <a
                       href="https://github.com/memito120"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -120,9 +90,45 @@ export function Contact() {
                       <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                         <Github className="h-5 w-5" />
                       </div>
-                      <div>
+                      <div className="text-left">
                         <h4 className="font-medium">GitHub</h4>
                         <p className="text-sm text-muted-foreground">github.com/memito120</p>
+                      </div>
+                    </a>
+                  </CardContent>
+                </Card>
+                <Card className="w-full max-w-md hover:shadow-md transition-shadow group cursor-pointer">
+                  <CardContent className="p-4">
+                    <a
+                      href="https://www.instagram.com/memito_boi/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4"
+                    >
+                      <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <Instagram className="h-5 w-5" />
+                      </div>
+                      <div className="text-left">
+                        <h4 className="font-medium">Instagram</h4>
+                        <p className="text-sm text-muted-foreground">instagram.com/memito_boi</p>
+                      </div>
+                    </a>
+                  </CardContent>
+                </Card>
+                <Card className="w-full max-w-md hover:shadow-md transition-shadow group cursor-pointer">
+                  <CardContent className="p-4">
+                    <a
+                      href="https://wa.me/56944675550"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4"
+                    >
+                      <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <MessageCircle className="h-5 w-5" />
+                      </div>
+                      <div className="text-left">
+                        <h4 className="font-medium">Whatsapp</h4>
+                        <p className="text-sm text-muted-foreground">wa.me/56944675550</p>
                       </div>
                     </a>
                   </CardContent>
@@ -130,100 +136,50 @@ export function Contact() {
               </div>
             </motion.div>
 
-            {/* Formulario de contacto */}
+            {/* Formulario de contacto cerrado*/}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col items-center gap-12"
             >
-              <Card>
-                <CardHeader>
-                  <CardTitle>Envíame un mensaje</CardTitle>
-                  <CardDescription>
-                    Completa el formulario y te responderé lo antes posible
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
-                        Nombre
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Tu nombre"
-                        disabled={isSubmitting}
-                      />
-                    </div>
+              <div>
+                <h3 className="text-2xl font-semibold mb-4 text-center">Envíame un mensaje</h3>
+                <p className="text-muted-foreground mb-6 text-center max-w-lg mx-auto">
+                  Formulario en desarrollo... Los campos están deshabilitados temporalmente.
+                </p>
+              </div>
 
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
-                        Email
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="tu@email.com"
-                        disabled={isSubmitting}
-                      />
-                    </div>
+              <div className="w-full max-w-md">
+                <Card className="w-full max-w-md mx-auto hover:shadow-md transition-shadow">
+                  <CardContent className="p-4">
+                    <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                      <div>
+                        <label className="text-sm font-medium mb-1 block">Nombre</label>
+                        <Input placeholder="Tu nombre" disabled />
+                      </div>
 
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-2">
-                        Mensaje
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        required
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Cuéntame sobre tu proyecto..."
-                        rows={5}
-                        disabled={isSubmitting}
-                      />
-                    </div>
+                      <div>
+                        <label className="text-sm font-medium mb-1 block">Email</label>
+                        <Input type="email" placeholder="tu@correo.com" disabled />
+                      </div>
 
-                    {submitStatus === 'success' && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="p-3 rounded-md bg-green-500/10 text-green-600 dark:text-green-400 text-sm"
-                      >
-                        ¡Mensaje enviado con éxito! Te responderé pronto.
-                      </motion.div>
-                    )}
+                      <div>
+                        <label className="text-sm font-medium mb-1 block">Mensaje</label>
+                        <Textarea placeholder="Escribe tu mensaje..." disabled />
+                      </div>
 
-                    <Button 
-                      type="submit" 
-                      className="w-full"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <span className="animate-spin mr-2">⏳</span>
-                          Enviando...
-                        </>
-                      ) : (
-                        <>
-                          <Send className="h-4 w-4 mr-2" />
-                          Enviar Mensaje
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+                      <div className="pt-2">
+                        <Button type="submit" disabled className="w-full justify-center">
+                          <Send className="h-4 w-4" />
+                          <span>Enviar (en desarrollo)</span>
+                        </Button>
+                      </div>
+                    </form>
+                  </CardContent>
+                </Card>
+              </div>
             </motion.div>
           </div>
         </motion.div>

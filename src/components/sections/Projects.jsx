@@ -44,7 +44,7 @@ export function Projects() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Proyectos Destacados</h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Una selección de mis proyectos más recientes y desafiantes.
+              Una selección de mis proyectos destacados durante mi carrera.
             </p>
           </div>
 

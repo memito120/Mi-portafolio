@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Briefcase } from 'lucide-react';
+import { Calendar, Briefcase } from 'lucide-react';
 import { useEntity } from '../../lib/entities';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { Skeleton } from '../ui/skeleton';
@@ -49,7 +49,7 @@ export function Experience() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Experiencia</h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Mi trayectoria profesional en el desarrollo web
+              Mi trayectoria profesional en el desarrollo de software, destacando roles, responsabilidades y logros clave.
             </p>
           </div>
 
