@@ -25,19 +25,20 @@ export function Navbar() {
 
   return (
     <>
-      {/* Navbar Desktop */}
+     {/* Icono titular decorativo */}
       <img
-          src="/icon-titular.svg"
-          alt="Icono titular"
-          className="absolute top-20 -translate-y-1/2 h-52 w-52 object-contain pointer-events-none"
-        />
+        src="/icon-titular.svg"
+        alt="Icono titular"
+        className="absolute top-12 -translate-y-1/2 h-32 w-40 2xl:h-6 2xl:w-6 object-contain pointer-events-none -left-7 "
+      />
+      {/* Navbar Desktop */}
       <motion.header
         initial={{ opacity: 0, y: -24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[min(96%,980px)] hidden xl:block"
       >
-        
+
         <nav className="rounded-2xl border border-border/60 bg-background/60 backdrop-blur-xl shadow-lg">
           <div className="px-3 py-2 sm:px-4">
             <ul className="flex items-center gap-1">

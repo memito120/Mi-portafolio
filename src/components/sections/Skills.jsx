@@ -1,100 +1,73 @@
 import { motion } from 'framer-motion';
-import {
-  Code2,
-  Database,
-  Wrench,
-  GitBranch,
-  Atom,
-  FileCode2,
-  Palette,
-  Wind,
-  Sparkles,
-  Github,
-  Package,
-  PenTool,
-  Bot,
-  FileSpreadsheet,
-  Server,
-  Braces,
-  Globe,
-  Boxes,
-  Circle
-} from 'lucide-react';
-import { Badge } from '../ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 
 const skillCategories = [
   {
-    title: "Frontend",
-    icon: Code2,
+    title: 'Front-end',
     skills: [
-      "React+Vite", "JavaScript", "TypeScript (Aprendiendo)",
-      "HTML", "CSS", "Tailwind CSS", "Bootstrap", "Framer Motion"
+      { name: 'React+Vite', icon: '/icons/react.svg' },
+      { name: 'JavaScript', icon: '/icons/javascript.svg' },
+      { name: 'TypeScript', icon: '/icons/typescript.svg', learning: true },
+      { name: 'HTML', icon: '/icons/html5.svg' },
+      { name: 'CSS', icon: '/icons/css.svg' },
+      { name: 'Tailwind CSS', icon: '/icons/tailwindcss.svg', learning: true },
+      { name: 'Bootstrap', icon: '/icons/bootstrap.svg' }
     ]
   },
   {
-    title: "Herramientas",
-    icon: Wrench,
+    title: 'Back-end',
     skills: [
-      "Office", "GitHub", "npm", "Figma", "Copilot", "Excel intermedio", "Sqlite"
+      { name: 'PHP', icon: '/icons/php.svg' },
+      { name: 'MongoDB', icon: '/icons/mongodb.svg' },
+      { name: 'MySQL', icon: '/icons/mysql.svg' },
+      { name: 'RESTful APIs', icon: '/icons/restfulapi.svg' },
+      { name: 'Node.js', icon: '/icons/nodejs.svg', learning: true },
+      { name: 'Next.js', icon: '/icons/nextjs.svg', learning: true }
     ]
   },
   {
-    title: "Backend",
-    icon: Database,
+    title: 'Herramientas',
     skills: [
-      "PHP", "MongoDB", "MySQL", "RESTful APIs", "Node.js (Aprendiendo)", "Next.js (Aprendiendo)"
+      { name: 'Office', icon: '/icons/office365.svg' },
+      { name: 'Git', icon: '/icons/git.svg' },
+      { name: 'npm', icon: '/icons/npm.svg' },
+      { name: 'Figma', icon: '/icons/figma.svg' },
+      { name: 'Copilot', icon: '/icons/copilotgithub.svg' },
+      { name: 'Excel intermedio', icon: '/icons/excel.svg' }
     ]
   },
   {
-    title: "Metodologías (Aprendiendo)",
-    icon: GitBranch,
+    title: 'Metodologías',
     skills: [
-      "Agile/Scrum", "Kanban"
+      { name: 'Agile/Scrum', icon: '/icons/agile.svg', learning: true },
+      { name: 'Kanban', icon: '/icons/kanban.svg', learning: true }
     ]
   }
 ];
-/*Funcion para asignar iconos a las habilidades según su nombre, mejorando la visualización de las mismas en la sección de habilidades del portafolio. 
-Se basa en palabras clave dentro del nombre de la habilidad para determinar el icono más representativo. 
-Si no se encuentra una coincidencia específica, se asigna un icono genérico. 
-Esto ayuda a los visitantes a identificar rápidamente las tecnologías y herramientas*/
-function getSkillIcon(skill) {
-  const label = skill.toLowerCase();
-
-  if (label.includes('office')) return FileSpreadsheet;
-  if (label.includes('react')) return Atom;
-  if (label.includes('javascript') || label.includes('typescript')) return FileCode2;
-  if (label.includes('html') || label.includes('css')) return Palette;
-  if (label.includes('tailwind')) return Wind;
-  if (label.includes('bootstrap')) return Palette;
-  if (label.includes('framer')) return Sparkles;
-  if (label.includes('git') || label.includes('github')) return Github;
-  if (label.includes('npm')) return Package;
-  if (label.includes('figma')) return PenTool;
-  if (label.includes('copilot')) return Bot;
-  if (label.includes('excel')) return FileSpreadsheet;
-  if (label.includes('sqlite') || label.includes('mysql') || label.includes('mongodb')) return Database;
-  if (label.includes('php') || label.includes('node')) return Server;
-  if (label.includes('api')) return Braces;
-  if (label.includes('next.js')) return Boxes;
-  if (label.includes('agile') || label.includes('kanban')) return GitBranch;
-  if (label.includes('web')) return Globe;
-
-  return Circle;
-}
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 bg-muted/30">
+    <section id="skills" className="relative overflow-hidden py-20 sm:py-24">
+      <div
+        className="absolute inset-0 -z-20"
+        
+      />
+      <div
+        className="absolute inset-0 -z-10 opacity-70"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, hsla(var(--border), 0.08) 1px, transparent 1px), linear-gradient(to bottom, hsla(var(--border), 0.08) 1px, transparent 1px)',
+          backgroundSize: '26px 26px',
+        }}
+      />
+
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.55 }}
         >
-          {/* Título de sección */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Habilidades</h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
@@ -102,51 +75,95 @@ export function Skills() {
             </p>
           </div>
 
-          {/* Grid de categorías */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid gap-8 lg:grid-cols-2 max-w-6xl mx-auto">
             {skillCategories.map((category, index) => (
               <motion.div
                 key={category.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.1, duration: 0.45 }}
+                className="rounded-2xl border border-white/[0.06] bg-white/[0.04] p-5 backdrop-blur-md"
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                        <category.icon className="h-6 w-6" />
-                      </div>
+                <div className="mb-5">
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2.5">
                       {category.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {category.skills.map((skill, skillIndex) => {
-                        const SkillIcon = getSkillIcon(skill);
+                    </h3>
 
-                        return (
-                          <motion.div
-                            key={skill}
-                            initial={{ opacity: 0, scale: 0.8 }}
+                    <motion.span
+                      initial={{ opacity: 0, scale: 0.75 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 280,
+                        damping: 16,
+                        delay: index * 0.1 + 0.15,
+                      }}
+                      className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"
+                    >
+                      {category.skills.length} skills
+                    </motion.span>
+                  </div>
+
+                  <div className="mt-3 h-px w-full bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.article
+                      key={skill.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -4 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: index * 0.08 + skillIndex * 0.03,
+                        duration: 0.35,
+                        ease: 'easeOut',
+                      }}
+                      className="group relative min-h-[128px] rounded-xl border p-3.5 backdrop-blur-lg transition-all duration-300 hover:shadow-[0_0_24px_hsla(var(--primary),0.16)]"
+                    >
+                      <div className="relative mb-2.5 inline-flex">
+                        <div className="grid h-11 w-11 place-items-center">
+                          <img
+                            src={skill.icon}
+                            alt={`${skill.name} logo`}
+                            className="h-12 w-12 object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+
+                        {skill.learning && (
+                          <motion.img
+                            initial={{ opacity: 0, scale: 0.6 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: (index * 0.1) + (skillIndex * 0.02) }}
-                          >
-                            <Badge
-                              variant="secondary"
-                              className="inline-flex items-center gap-1.5 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                            >
-                              <SkillIcon className="h-3.5 w-3.5" />
-                              {skill}
-                            </Badge>
-                          </motion.div>
-                        );
-                      })}
-                    </div>
-                  </CardContent>
-                </Card>
+                            transition={{
+                              type: 'spring',
+                              stiffness: 260,
+                              damping: 14,
+                              delay: index * 0.08 + skillIndex * 0.03 + 0.12,
+                            }}
+                            src="/icons/learning.svg"
+                            alt="Aprendiendo"
+                            className="absolute -right-2 -top-2 h-5 w-5 rounded-full border border-amber-600/60 bg-amber-600/20 "
+                            loading="lazy"
+                          />
+                        )}
+                      </div>
+
+                      <p className="text-sm font-semibold leading-tight text-foreground/95">{skill.name}</p>
+
+                      {skill.learning && (
+                        <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-amber-600">
+                          Aprendiendo
+                        </p>
+                      )}
+                    </motion.article>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>
