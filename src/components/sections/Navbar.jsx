@@ -28,8 +28,8 @@ export function Navbar() {
      {/* Icono titular decorativo */}
       <img
         src="/icon-titular.svg"
-        alt="Icono titular"
-        className="absolute top-12 -translate-y-1/2 h-32 w-40 2xl:h-6 2xl:w-6 object-contain pointer-events-none -left-7 "
+        alt="Icono titular de marca personal"
+        className="absolute -translate-y-3 h-32 w-40 2xl:h-52 2xl:w-52 object-contain pointer-events-none"
       />
       {/* Navbar Desktop */}
       <motion.header

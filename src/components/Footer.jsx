@@ -9,8 +9,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Copyright */}
           <div className="text-sm text-muted-foreground">
-            © {currentYear} Guillermo Delgado. Diseñado y desarrollado con{' '}
-            <Heart className="inline h-4 w-4 text-red-500 fill-red-500" />
+            © {currentYear} Guillermo Delgado. Diseñado y desarrollado con mucho amor <Heart className="inline-block h-4 w-4 text-red-500 align-text-bottom" />.
+            
           </div>
         </div>
       </div>
